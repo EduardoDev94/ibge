@@ -3,5 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+h1{
+    text-align: center;
+}
+.content-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px
+}
 
+#brazilian-flag {
+    background-image: url('./imgs/bandeira-brasil.png');
+}
 
+img {
+    width: 60%;
+
+}
+.selects-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}

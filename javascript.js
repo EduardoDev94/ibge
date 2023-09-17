@@ -1,15 +1,22 @@
 console.log('js vinculado')
 
 const selectRegion = document.querySelector('#region')
+const buttonCitySearch = document.querySelector('#search-button')
 
 selectRegion.addEventListener('change', releaseSelect)
+buttonCitySearch.addEventListener('click', searchCityByState)
 
 
 
+const CONFIG = {       
+    method: 'GET',
+    headers: {
+    'Content-Type': 'application/json'}
+    }
 
 function releaseSelect() {
     const selectRegion = document.querySelector('#region')
-    const selectUf = document.querySelector('#fedarative-unit')
+    const selectUf = document.querySelector('#federative-unit')
     const selectedOption = selectRegion.value
     selectUf.innerHTML = ''
     let options = ''
@@ -65,5 +72,11 @@ function releaseSelect() {
     selectUf.innerHTML = options;
   }
 
+  async function searchCityByState (){
+    const stateSelect = document.querySelector('#federative-unit')
+    const response = await fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${stateSelect.value}?providers=dados-abertos-br,gov,wikipedia`, CONFIG)
+    const data = await response.json()
+    console.log(data)
+  }
 
 

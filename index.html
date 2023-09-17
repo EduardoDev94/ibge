@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>IBGE</title>
+</head>
+<body>
+    <header>
+        <h1> Desafio IBGE </h1>
+    </header>
+    <main>
+        <div class="content-container">
+            <div class="brazilian-map">
+
+            </div>
+            <div>
+                <label for="region"> Selecione a região: </label>
+                <select name="region" id="region">
+                  <option disabled selected hidden>Região</option>
+                  <option value="north">Norte</option>
+                  <option value="northeast">Nordeste</option>
+                  <option value="centereast">Centroeste</option>
+                  <option value="southeast">Sudeste</option>
+                  <option value="south">Sul</option>
+                </select>
+                <label for="federative-unit">Selecione a unidade federativa: </label>
+                <select  name="fedarative-unit" id="fedarative-unit">
+                    <option disabled selected hidden>Escolha uma região</option>
+                  </select>
+            </div>
+
+        </div>
+
+        <script src="./javascript.js"></script>
+    </main>
+
+</body>
+</html>

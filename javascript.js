@@ -76,7 +76,17 @@ function releaseSelect() {
     const stateSelect = document.querySelector('#federative-unit')
     const response = await fetch(`https://brasilapi.com.br/api/ibge/municipios/v1/${stateSelect.value}?providers=dados-abertos-br,gov,wikipedia`, CONFIG)
     const data = await response.json()
-    console.log(data)
+    const listSection = document.querySelector('.city-list')
+    listSection.innerHTML = ''
+    const tittleSection = document.createElement('h2')
+    tittleSection.textContent = 'Municípios'
+    const listContainer = document.createElement('ol')
+    listSection.append(tittleSection, listContainer)
+    data.forEach(city => {
+      const cityList = document.createElement('li')
+      cityList.textContent = city.nome
+      listContainer.appendChild(cityList)
+    })  
   }
 
 
